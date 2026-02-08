@@ -10,12 +10,12 @@
     --success-color: #28a745;
     --danger-color: #dc3545;
     --warning-color: #ffc107;
-    
+
     /* Оптимизированные шрифты */
     --font-primary: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-heading: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, 'Courier New', monospace;
-    
+
     /* Размеры шрифтов для типографической шкалы */
     --fs-xs: 0.75rem;
     --fs-sm: 0.875rem;
@@ -26,12 +26,12 @@
     --fs-2xl: 1.875rem;
     --fs-3xl: 2.25rem;
     --fs-4xl: 3rem;
-    
+
     /* Высота строк */
     --lh-tight: 1.25;
     --lh-normal: 1.5;
     --lh-relaxed: 1.75;
-    
+
     /* Веса шрифтов */
     --fw-light: 300;
     --fw-normal: 400;
@@ -59,24 +59,37 @@ body {
     overflow-x: hidden;
 }
 
+.py-4 {
+    padding-top: 0rem !important;
+}
+
 html {
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* Улучшение читаемости на мобильных */
-p, li, span, div {
+p,
+li,
+span,
+div {
     text-wrap: pretty;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-wrap: balance;
 }
 
 /* Убираем горизонтальный скролл на маленьких экранах */
-html, body {
+html,
+body {
     overflow-x: hidden;
     width: 100%;
 }
@@ -98,7 +111,11 @@ img {
 }
 
 /* Улучшение контраста для доступности */
-a:focus, button:focus, input:focus, select:focus, textarea:focus {
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
@@ -111,10 +128,10 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     margin-bottom: 1.5rem;
     overflow: hidden;
     text-align: center;
-    background: linear-gradient(135deg, 
-        rgba(108, 99, 255, 0.12) 0%,
-        rgba(161, 127, 224, 0.08) 50%,
-        rgba(74, 68, 198, 0.04) 100%);
+    background: linear-gradient(135deg,
+            rgba(108, 99, 255, 0.12) 0%,
+            rgba(161, 127, 224, 0.08) 50%,
+            rgba(74, 68, 198, 0.04) 100%);
     border-radius: 0 0 20px 20px;
     border-bottom: 1px solid rgba(108, 99, 255, 0.15);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
@@ -132,7 +149,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         radial-gradient(circle at 20% 85%, rgba(108, 99, 255, 0.12) 0%, transparent 50%),
         radial-gradient(circle at 80% 15%, rgba(161, 127, 224, 0.12) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(74, 68, 198, 0.08) 0%, transparent 70%);
@@ -158,7 +175,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     justify-content: center;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: 12px;
-    box-shadow: 
+    box-shadow:
         0 2px 2px rgba(108, 99, 255, 0.2),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
     transform: translateY(0);
@@ -168,7 +185,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 .header-icon:hover {
     transform: translateY(-2px) scale(1.03);
-    box-shadow: 
+    box-shadow:
         0 6px 20px rgba(108, 99, 255, 0.25),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
@@ -184,10 +201,10 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     font-size: var(--fs-2xl);
     font-weight: var(--fw-bold);
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, 
-        var(--primary-color) 0%,
-        var(--accent-color) 60%,
-        #ff6584 100%);
+    background: linear-gradient(135deg,
+            var(--primary-color) 0%,
+            var(--accent-color) 60%,
+            #ff6584 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -305,12 +322,12 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     font-weight: var(--fw-semibold);
     text-decoration: none;
     transition: all 0.2s ease;
-    box-shadow: 
+    box-shadow:
         0 3px 8px rgba(108, 99, 255, 0.2),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
     margin-top: 0.5rem;
     position: relative;
-   overflow: hidden;
+    overflow: hidden;
 }
 
 .cta-button::before {
@@ -320,10 +337,10 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.15), 
-        transparent);
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
     transition: left 0.4s ease;
 }
 
@@ -333,7 +350,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 .cta-button:hover {
     transform: translateY(-1px);
-    box-shadow: 
+    box-shadow:
         0 4px 12px rgba(108, 99, 255, 0.25),
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
     background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
@@ -381,7 +398,9 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     margin: -10px;
 }
 
-.col-lg-6, .col-md-6, .col-sm-12 {
+.col-lg-6,
+.col-md-6,
+.col-sm-12 {
     padding: 10px;
     flex: 0 0 auto;
     width: 100%;
@@ -508,7 +527,9 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 
 /* Поля формы */
-.form-control, .form-select, textarea {
+.form-control,
+.form-select,
+textarea {
     font-family: var(--font-primary);
     font-size: var(--fs-base);
     line-height: var(--lh-normal);
@@ -520,7 +541,9 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     transition: all 0.2s ease;
 }
 
-.form-control:focus, .form-select:focus, textarea:focus {
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25);
     outline: none;
@@ -542,7 +565,8 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 
 /* Счетчик символов */
-#charCount, #maxCharsInfo {
+#charCount,
+#maxCharsInfo {
     font-family: var(--font-mono);
     font-weight: var(--fw-medium);
 }
@@ -823,8 +847,13 @@ footer a:hover {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeIn {
@@ -832,6 +861,7 @@ footer a:hover {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -854,7 +884,7 @@ footer a:hover {
         flex: 0 0 auto;
         width: 50%;
     }
-    
+
     html {
         font-size: 17px;
     }
@@ -862,27 +892,29 @@ footer a:hover {
 
 /* Мобильные устройства (до 768px) */
 @media (max-width: 767px) {
+
     /* Карточки по 2 в ряд */
     .cta-button {
-    display: inline-flex;
+        display: inline-flex;
     }
+
     .row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         margin: 0;
     }
-    
+
     .col-sm-12 {
         width: 100%;
         grid-column: span 1;
         padding: 0;
     }
-    
+
     .card {
         margin-bottom: 0;
     }
-    
+
     /* Хедер для мобильных */
     .site-header {
         padding: 1rem 0 0.875rem;
@@ -890,146 +922,148 @@ footer a:hover {
         border-radius: 0 0 15px 15px;
         min-height: 150px;
     }
-    
+
     .site-header .container {
         padding: 0 1rem;
     }
-    
+
     .header-icon {
         width: 45px;
         height: 45px;
         border-radius: 10px;
         margin-bottom: 0.5rem;
     }
-    
+
     .header-icon i {
         font-size: 1.25rem;
     }
-    
+
     .main-title {
         font-size: var(--fs-xl);
         padding: 0 0.25rem;
         margin-bottom: 0.25rem;
     }
-    
+
     .main-title::after {
         bottom: -3px;
         width: 30px;
         height: 1.5px;
     }
-    
+
     .subtitle {
         font-size: var(--fs-sm);
         padding: 0 0.5rem;
         margin-bottom: 0.5rem;
         line-height: 1.3;
     }
-    
+
     .header-stats {
         display: none;
         gap: 0.75rem;
         margin-top: 0.75rem;
     }
-    
+
     .stat-item {
         padding: 0.375rem 0.75rem;
         min-width: 75px;
         border-radius: 6px;
     }
-    
+
     .stat-number {
         font-size: var(--fs-md);
     }
-    
+
     .stat-label {
         font-size: 0.55rem;
     }
-    
+
     .cta-button {
         padding: 0.375rem 1rem;
         font-size: var(--fs-xs);
         border-radius: 6px;
         margin-top: 0.25rem;
     }
-    
+
     .cta-button i {
         font-size: 0.75rem;
     }
-    
+
     .decorative-element:nth-child(1) {
         width: 120px;
         height: 120px;
         top: -60px;
         left: -40px;
     }
-    
+
     .decorative-element:nth-child(2) {
         width: 90px;
         height: 90px;
         bottom: -45px;
         right: -25px;
     }
-    
+
     /* Остальные стили для мобильных */
     .container {
         padding: 15px 10px 30px;
     }
-    
+
     .size-btn-group {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
     .qr-actions {
         flex-direction: column;
         gap: 8px;
     }
-    
+
     .qr-actions .btn {
         width: 100%;
         margin: 0;
     }
-    
+
     .color-palette {
         justify-content: center;
         gap: 8px;
     }
-    
+
     .qr-image-container {
         padding: 10px;
         margin: 10px auto;
         max-width: calc(100vw - 40px);
     }
-    
+
     .qr-image {
         max-width: 100%;
         max-height: 300px;
         object-fit: contain;
     }
-    
+
     .table {
         font-size: var(--fs-sm);
         min-width: 300px;
     }
-    
+
     .card-body {
         padding: 1rem !important;
     }
-    
-    .form-control, .form-select, textarea {
+
+    .form-control,
+    .form-select,
+    textarea {
         font-size: var(--fs-base);
         padding: 0.625rem 0.875rem;
     }
-    
+
     .form-label {
         font-size: var(--fs-md);
     }
-    
+
     .generate-btn {
         font-size: var(--fs-md);
         padding: 0.875rem 1.25rem;
     }
-    
+
     .notification {
         left: 10px;
         right: 10px;
@@ -1039,7 +1073,7 @@ footer a:hover {
         padding: 0.875rem 1.25rem;
         font-size: var(--fs-sm);
     }
-    
+
     .row.align-items-center {
         flex-direction: column;
     }
@@ -1053,26 +1087,26 @@ footer a:hover {
         border-radius: 0;
         min-height: 130px;
     }
-    
+
     .header-stats {
         flex-direction: row;
         gap: 0.5rem;
     }
-    
+
     .stat-item {
         min-width: 65px;
         padding: 0.25rem 0.5rem;
     }
-    
+
     .stat-number {
         font-size: var(--fs-base);
     }
-    
+
     .stat-label {
         font-size: 0.5rem;
         letter-spacing: 0.2px;
     }
-    
+
     .decorative-element:nth-child(1),
     .decorative-element:nth-child(2) {
         opacity: 0.03;
@@ -1081,63 +1115,64 @@ footer a:hover {
 
 /* Очень маленькие мобильные (до 400px) */
 @media (max-width: 400px) {
+
     /* Карточки по 1 в ряд */
     .row {
         grid-template-columns: 1fr;
         gap: 8px;
     }
-    
+
     .header-stats {
         gap: 0.375rem;
     }
-    
+
     .stat-item {
         min-width: 55px;
         padding: 0.25rem 0.375rem;
     }
-    
+
     .main-title {
         font-size: var(--fs-lg);
     }
-    
+
     .subtitle {
         font-size: var(--fs-xs);
         line-height: 1.2;
     }
-    
+
     .cta-button {
         padding: 0.25rem 0.75rem;
         font-size: 0.7rem;
     }
-    
+
     .color-option {
         width: 30px;
         height: 30px;
     }
-    
+
     .color-option i {
         font-size: 1rem;
     }
-    
+
     .qr-image {
         max-height: 200px;
     }
-    
+
     .generate-btn {
         padding: 0.75rem 1rem;
         font-size: var(--fs-base);
     }
-    
+
     .qr-actions .btn {
         padding: 0.5rem;
         font-size: var(--fs-sm);
     }
-    
+
     footer {
         font-size: var(--fs-xs);
         text-align: center;
     }
-    
+
     footer .row {
         flex-direction: column;
         gap: 1rem;
@@ -1149,7 +1184,7 @@ footer a:hover {
     html {
         font-size: 18px;
     }
-    
+
     .container {
         max-width: 1400px;
     }
@@ -1160,7 +1195,7 @@ footer a:hover {
     html {
         font-size: 20px;
     }
-    
+
     .container {
         max-width: 1600px;
     }
@@ -1171,12 +1206,12 @@ footer a:hover {
     .qr-result-container {
         overflow: hidden;
     }
-    
+
     .qr-image {
         max-width: min(100%, 300px) !important;
         height: auto !important;
     }
-    
+
     img.qr-image {
         display: block;
         margin-left: auto;
