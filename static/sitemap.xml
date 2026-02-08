@@ -6,12 +6,12 @@
     
     <!-- Главная страница -->
     <url>
-        <loc>https://qrgenerator-9iyo.onrender.com/</loc>
+        <loc>https://qrgenerator-1-38u7.onrender.com/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://qrgenerator-9iyo.onrender.com/static/images/og-image.png</image:loc>
+            <image:loc>https://qrgenerator-1-38u7.onrender.com/static/images/og-image.png</image:loc>
             <image:title>QR Генератор Онлайн</image:title>
             <image:caption>Бесплатный генератор QR-кодов</image:caption>
         </image:image>
@@ -19,22 +19,22 @@
     
     <!-- Примеры страниц (если будут) -->
     <url>
-        <loc>https://qrgenerator-9iyo.onrender.com/about</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://qrgenerator-1-38u7.onrender.com/about</loc>
+        <lastmod>2026-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://qrgenerator-9iyo.onrender.com/privacy</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://qrgenerator-1-38u7.onrender.com/privacy</loc>
+        <lastmod>2026-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>https://qrgenerator-9iyo.onrender.com/terms</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://qrgenerator-1-38u7.onrender.com/terms</loc>
+        <lastmod>2026-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>

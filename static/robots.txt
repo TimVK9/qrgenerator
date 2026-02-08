@@ -13,7 +13,7 @@ Allow: /terms-of-service
 Allow: /cookie-policy
 Allow: /dmca-policy
 
-Sitemap: https://qrgenerator-9iyo.onrender.com/sitemap.xml
+Sitemap: https://qrgenerator-1-38u7.onrender.com/sitemap.xml
 
 # Security bots
 User-agent: security.txt
