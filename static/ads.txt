@@ -1,0 +1,12 @@
+# QR Generator - Free Online QR Code Generator
+# Website: https://qrgenerator-9iyo.onrender.com
+# Description: Free tool for creating QR codes online
+
+# Currently no advertising on this service
+# This file is maintained for industry standard compliance
+
+# For advertising inquiries: contact@qrgenerator-9iyo.onrender.com
+# For technical support: support@qrgenerator-9iyo.onrender.com
+
+# Updated: 2026-02-09
+# Version: 1.0

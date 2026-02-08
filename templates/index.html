@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Основные мета-теги -->
+    <title>QR Генератор - Бесплатный онлайн создатель QR-кодов с выбором размера</title>
     <meta name="description" content="Бесплатный онлайн генератор QR-кодов с выбором размера, цвета и уровня коррекции ошибок. Создавайте QR-коды для ссылок, текста, email и телефонов.">
     <meta name="keywords" content="QR код генератор, создать QR код, онлайн QR код, бесплатный QR код, QR код для ссылки, QR код для текста, генератор QR кодов">
     <meta name="author" content="QR Генератор">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
     <meta property="og:title" content="QR Генератор - Создавайте QR-коды онлайн">
     <meta property="og:description" content="Бесплатный онлайн генератор QR-кодов с выбором размера и цвета">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qrgenerator-9iyo.onrender.com">
-    <meta name="twitter:url" content="https://qrgenerator-9iyo.onrender.com">
+    
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="QR Генератор - Создавайте QR-коды онлайн">
     <meta name="twitter:description" content="Бесплатный онлайн генератор QR-кодов">
-    <title>QR Генератор - Бесплатный онлайн создатель QR-кодов с выбором размера</title>
-
-    <!-- Подключение Bootstrap CSS -->
+    
+    <!-- PWA и иконки -->
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+    <meta name="theme-color" content="#6c63ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="QR Генератор">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    
+    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Подключение внешнего CSS файла -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-    <!-- Schema.org markup for SEO -->
+    
+    <!-- Schema.org (исправлен URL) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "QR Генератор",
         "description": "Бесплатный онлайн генератор QR-кодов с выбором размера, цвета и уровня коррекции ошибок",
-        "url": "https://your-domain.com",
+        "url": "https://qrgenerator-9iyo.onrender.com",
         "applicationCategory": "UtilityApplication",
         "operatingSystem": "Any",
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "USD"
+            "priceCurrency": "RUB"
         },
         "author": {
             "@type": "Organization",
@@ -45,6 +61,7 @@
     }
     </script>
 </head>
+
 <body class="py-4">
     <div class="container">
         <!-- Изящный хедер -->
@@ -53,19 +70,19 @@
                 <div class="decorative-element"></div>
                 <div class="decorative-element"></div>
             </div>
-            
+
             <div class="container">
                 <div class="header-icon">
                     <i class="bi bi-qr-code"></i>
                 </div>
-                
+
                 <h1 class="main-title">Бесплатный генератор QR-кодов</h1>
-                
+
                 <p class="subtitle">
-                    Создавайте стильные QR-коды для ссылок, текста, email и телефонов. 
+                    Создавайте стильные QR-коды для ссылок, текста, email и телефонов.
                     Настройте размер, цвет и уровень коррекции ошибок за секунды.
                 </p>
-                
+
                 <div class="header-stats">
                     <div class="stat-item">
                         <span class="stat-number">5</span>
@@ -84,7 +101,7 @@
                         <span class="stat-label">Возможностей</span>
                     </div>
                 </div>
-                
+
                 <a href="#generatorForm" class="cta-button">
                     <i class="bi bi-lightning-charge-fill"></i>
                     Создать QR-код
@@ -103,8 +120,8 @@
                             Введите данные для QR-кода:
                         </label>
                         <textarea name="data" class="form-control form-control-lg" id="dataInput" rows="4"
-                                  placeholder="Введите текст, ссылку, email, телефон..." required
-                                  style="min-height: 120px;" aria-label="Поле для ввода данных QR-кода">{{ form_data.data if form_data else '' }}</textarea>
+                            placeholder="Введите текст, ссылку, email, телефон..." required style="min-height: 120px;"
+                            aria-label="Поле для ввода данных QR-кода">{{ form_data.data if form_data else '' }}</textarea>
                         <div class="form-text text-muted mt-2">
                             Поддерживаются: URL, текст, email (mailto:test@example.com), телефон (tel:+79991234567)
                         </div>
@@ -113,7 +130,8 @@
                         <!-- Счетчик символов -->
                         <div class="mt-2">
                             <small class="text-muted">
-                                <span id="charCount">0</span> символов (максимум: <span id="maxCharsInfo">~240 символов</span>)
+                                <span id="charCount">0</span> символов (максимум: <span id="maxCharsInfo">~240
+                                    символов</span>)
                             </small>
                             <div class="progress mt-1" style="height: 4px;">
                                 <div id="charProgress" class="progress-bar" role="progressbar" style="width: 0%;"></div>
@@ -129,24 +147,22 @@
                         </h2>
                         <div class="size-btn-group">
                             {% for size in size_options %}
-                                <label
-                                    class="size-btn {% if (form_data and form_data.size == size.id) or (not form_data and size.id == 'm') %}selected{% endif %}"
-                                    aria-label="Размер {{ size.name }}"
-                                    data-size-id="{{ size.id }}"
-                                    data-max-chars='{{ size.char_limits|tojson }}'>
-                                    <input type="radio" name="size" value="{{ size.id }}" 
-                                           {% if (form_data and form_data.size == size.id) or (not form_data and size.id == 'm') %}checked{% endif %} 
-                                           class="visually-hidden">
-                                    <div class="size-icon">
-                                        <i class="bi {{ size.icon }}"></i>
-                                    </div>
-                                    <div class="fw-bold mb-1">{{ size.name }}</div>
-                                    <div class="small mb-2">
-                                        <span class="badge bg-dark">{{ size.box_size }}px модуль</span>
-                                        <span class="badge bg-secondary ms-1">{{ size.border }}px рамка</span>
-                                    </div>
-                                    <small class="text-muted d-block mb-2">{{ size.desc }}</small>
-                                </label>
+                            <label
+                                class="size-btn {% if (form_data and form_data.size == size.id) or (not form_data and size.id == 'm') %}selected{% endif %}"
+                                aria-label="Размер {{ size.name }}" data-size-id="{{ size.id }}"
+                                data-max-chars='{{ size.char_limits|tojson }}'>
+                                <input type="radio" name="size" value="{{ size.id }}" {% if (form_data and
+                                    form_data.size==size.id) or (not form_data and size.id=='m' ) %}checked{% endif %}
+                                    class="visually-hidden">
+                                <div class="size-icon">
+                                    <i class="bi {{ size.icon }}"></i>
+                                </div>
+                                <div class="fw-bold mb-1">{{ size.name }}</div>
+                                
+
+                                
+                                <small class="text-muted d-block mb-2">{{ size.desc }}</small>
+                            </label>
                             {% endfor %}
                         </div>
                     </div>
@@ -161,15 +177,14 @@
                                 <!-- Панель с цветами -->
                                 <div class="color-palette mb-3">
                                     {% for color in color_options %}
-                                        <div class="color-option {% if (form_data and form_data.color == color) or (not form_data and color == '#000000') %}selected{% endif %}"
-                                             style="background-color: {{ color }};"
-                                             data-color="{{ color }}"
-                                             onclick="selectColor(this, '{{ color }}')"
-                                             aria-label="Цвет {{ color }}">
-                                            {% if (form_data and form_data.color == color) or (not form_data and color == '#000000') %}
-                                                <i class="bi bi-check"></i>
-                                            {% endif %}
-                                        </div>
+                                    <div class="color-option {% if (form_data and form_data.color == color) or (not form_data and color == '#000000') %}selected{% endif %}"
+                                        style="background-color: {{ color }};" data-color="{{ color }}"
+                                        onclick="selectColor(this, '{{ color }}')" aria-label="Цвет {{ color }}">
+                                        {% if (form_data and form_data.color == color) or (not form_data and color ==
+                                        '#000000') %}
+                                        <i class="bi bi-check"></i>
+                                        {% endif %}
+                                    </div>
                                     {% endfor %}
                                 </div>
                                 <!-- Кастомный цвет через input type="color" -->
@@ -178,17 +193,16 @@
                                         <i class="bi bi-eyedropper me-1"></i> Кастомный цвет:
                                     </label>
                                     <div class="input-group">
-                                        <input type="color" id="customColorInput" 
-                                               value="{{ form_data.color if form_data else '#000000' }}" 
-                                               class="form-control form-control-color" 
-                                               aria-label="Выбор кастомного цвета"
-                                               style="height: 45px; width: 60px;">
-                                        <input type="text" id="customColorHex" 
-                                               class="form-control" 
-                                               placeholder="#000000 или RRGGBB"
-                                               value="{{ form_data.color if form_data else '#000000' }}"
-                                               aria-label="HEX код цвета">
-                                        <button type="button" class="btn btn-outline-primary" onclick="applyCustomColor()" id="applyColorBtn">
+                                        <input type="color" id="customColorInput"
+                                            value="{{ form_data.color if form_data else '#000000' }}"
+                                            class="form-control form-control-color" aria-label="Выбор кастомного цвета"
+                                            style="height: 45px; width: 60px;">
+                                        <input type="text" id="customColorHex" class="form-control"
+                                            placeholder="#000000 или RRGGBB"
+                                            value="{{ form_data.color if form_data else '#000000' }}"
+                                            aria-label="HEX код цвета">
+                                        <button type="button" class="btn btn-outline-primary"
+                                            onclick="applyCustomColor()" id="applyColorBtn">
                                             <i class="bi bi-check-lg"></i>
                                         </button>
                                     </div>
@@ -197,17 +211,23 @@
                                     </div>
                                 </div>
                                 <!-- Скрытое поле для цвета -->
-                                <input type="hidden" name="color" id="colorInput" value="{{ form_data.color if form_data else '#000000' }}">
+                                <input type="hidden" name="color" id="colorInput"
+                                    value="{{ form_data.color if form_data else '#000000' }}">
                             </div>
                             <div class="col-md-6">
                                 <h3 class="form-label fw-bold">
                                     <i class="bi bi-shield-check me-2"></i> Уровень коррекции ошибок:
                                 </h3>
-                                <select class="form-select" name="error_correction" id="errorCorrectionSelect" aria-label="Выбор уровня коррекции ошибок">
-                                    <option value="L" {% if form_data and form_data.error_correction == 'L' %}selected{% endif %}>L (Низкий, 7%)</option>
-                                    <option value="M" {% if (form_data and form_data.error_correction == 'M') or not form_data %}selected{% endif %}>M (Средний, 15%)</option>
-                                    <option value="Q" {% if form_data and form_data.error_correction == 'Q' %}selected{% endif %}>Q (Высокий, 25%)</option>
-                                    <option value="H" {% if form_data and form_data.error_correction == 'H' %}selected{% endif %}>H (Максимальный, 30%)</option>
+                                <select class="form-select" name="error_correction" id="errorCorrectionSelect"
+                                    aria-label="Выбор уровня коррекции ошибок">
+                                    <option value="L" {% if form_data and form_data.error_correction=='L' %}selected{%
+                                        endif %}>L (Низкий, 7%)</option>
+                                    <option value="M" {% if (form_data and form_data.error_correction=='M' ) or not
+                                        form_data %}selected{% endif %}>M (Средний, 15%)</option>
+                                    <option value="Q" {% if form_data and form_data.error_correction=='Q' %}selected{%
+                                        endif %}>Q (Высокий, 25%)</option>
+                                    <option value="H" {% if form_data and form_data.error_correction=='H' %}selected{%
+                                        endif %}>H (Максимальный, 30%)</option>
                                 </select>
                                 <div class="form-text text-muted mt-2">
                                     Уровень M рекомендуется для большинства случаев
@@ -218,21 +238,22 @@
 
                     <!-- Кнопка генерации -->
                     <div id="generateSection">
-                        <button type="submit" class="btn generate-btn w-100" id="generateBtn" aria-label="Сгенерировать QR-код">
+                        <button type="submit" class="btn generate-btn w-100" id="generateBtn"
+                            aria-label="Сгенерировать QR-код">
                             <i class="bi bi-lightning-charge-fill me-2"></i>
                             Сгенерировать QR-код
                         </button>
                         <!-- Индикатор загрузки -->
                         <div class="loading-spinner" id="loadingSpinner" style="display: none;"></div>
                     </div>
-                    
+
                     <!-- Сообщения об ошибках -->
                     {% if error %}
                     <div class="alert alert-danger mt-3" role="alert">
                         <i class="bi bi-exclamation-triangle me-2"></i> {{ error }}
                     </div>
                     {% endif %}
-                    
+
                     <!-- Предупреждения -->
                     {% if warning_message %}
                     <div class="alert alert-warning mt-3" role="alert">
@@ -243,97 +264,103 @@
             </div>
         </div>
 
-<!-- ... предыдущий код остается без изменений до блока результата ... -->
+        <!-- ... предыдущий код остается без изменений до блока результата ... -->
 
-<!-- Результат с якорем -->
-{% if qr_data_url and qr_info %}
-<div class="card shadow-lg mb-5" id="qrResult">
-    <div class="card-header bg-gradient border-0"
-         style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <h2 class="mb-0 text-white">
-            <i class="bi bi-check-circle-fill me-2"></i> Результат
-        </h2>
-    </div>
-    <div class="card-body p-4">
-        <div class="row align-items-center">
-            <!-- QR изображение с alt текстом -->
-            <div class="col-lg-6 text-center mb-4 mb-lg-0">
-                <div class="qr-image-container">
-                    <img src="{{ qr_data_url }}" alt="QR код для: {{ qr_info.data_length }} символов" class="qr-image img-fluid"
-                         style="max-width: 350px;" id="generatedQRImage">
-                </div>
-                <!-- Группа действий -->
-                <div class="qr-actions">
-                    <a href="{{ qr_data_url }}"
-                       download="qr_{{ qr_info.selected_size.id }}_{{ qr_info.version }}.png"
-                       class="btn btn-primary" aria-label="Скачать QR код" id="downloadBtn">
-                        <i class="bi bi-download me-2"></i> Скачать PNG
-                    </a>
-                    <button type="button" onclick="copyToClipboard()" class="btn btn-outline-secondary" aria-label="Копировать QR код" id="copyBtn">
-                        <i class="bi bi-clipboard me-2"></i> Копировать
-                    </button>
-                    <button type="button" onclick="makeAnotherQR()" class="btn make-another-btn" aria-label="Создать новый QR код" id="anotherBtn">
-                        <i class="bi bi-plus-circle me-2"></i> Сделать еще
-                    </button>
-                </div>
+        <!-- Результат с якорем -->
+        {% if qr_data_url and qr_info %}
+        <div class="card shadow-lg mb-5" id="qrResult">
+            <div class="card-header bg-gradient border-0"
+                style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+                <h2 class="mb-0 text-white">
+                    <i class="bi bi-check-circle-fill me-2"></i> Результат
+                </h2>
             </div>
-            <!-- Техническая информация -->
-            <div class="col-lg-6">
-                <h3 class="mb-3">
-                    <i class="bi bi-info-circle me-2"></i> Техническая информация
-                </h3>
-                <div class="table-responsive">
-                    <table class="table table-dark table-hover">
-                        <tbody>
-                        <tr>
-                            <th scope="row">Выбранный размер:</th>
-                            <td>
-                                {{ qr_info.selected_size.name }}
-                                <span class="badge bg-primary ms-2">{{ qr_info.selected_size.box_size }}px</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Цвет QR-кода:</th>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <div style="width: 20px; height: 20px; background-color: {{ qr_info.color }}; border-radius: 4px; border: 1px solid var(--border-color);" aria-hidden="true"></div>
-                                    <code>{{ qr_info.color }}</code>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Коррекция ошибок:</th>
-                            <td>{{ qr_info.error_level }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Размер изображения:</th>
-                            <td>
-                                <span class="badge bg-secondary">{{ qr_info.size_px[0] }}×{{ qr_info.size_px[1] }}px</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Длина данных:</th>
-                            <td>
-                                {{ qr_info.data_length }} символов
-                                {% if qr_info.max_chars %}
-                                <br><small class="text-muted">Максимум для этого размера: {{ qr_info.max_chars }}</small>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Версия QR-кода:</th>
-                            <td>{{ qr_info.version }}</td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="card-body p-4">
+                <div class="row align-items-center">
+                    <!-- QR изображение с alt текстом -->
+                    <div class="col-lg-6 text-center mb-4 mb-lg-0">
+                        <div class="qr-image-container">
+                            <img src="{{ qr_data_url }}" alt="QR код для: {{ qr_info.data_length }} символов"
+                                class="qr-image img-fluid" style="max-width: 350px;" id="generatedQRImage">
+                        </div>
+                        <!-- Группа действий -->
+                        <div class="qr-actions">
+                            <a href="{{ qr_data_url }}"
+                                download="qr_{{ qr_info.selected_size.id }}_{{ qr_info.version }}.png"
+                                class="btn btn-primary" aria-label="Скачать QR код" id="downloadBtn">
+                                <i class="bi bi-download me-2"></i> Скачать PNG
+                            </a>
+                            <button type="button" onclick="copyToClipboard()" class="btn btn-outline-secondary"
+                                aria-label="Копировать QR код" id="copyBtn">
+                                <i class="bi bi-clipboard me-2"></i> Копировать
+                            </button>
+                            <button type="button" onclick="makeAnotherQR()" class="btn make-another-btn"
+                                aria-label="Создать новый QR код" id="anotherBtn">
+                                <i class="bi bi-plus-circle me-2"></i> Сделать еще
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Техническая информация -->
+                    <div class="col-lg-6">
+                        <h3 class="mb-3">
+                            <i class="bi bi-info-circle me-2"></i> Техническая информация
+                        </h3>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Выбранный размер:</th>
+                                        <td>
+                                            {{ qr_info.selected_size.name }}
+                                            <span class="badge bg-primary ms-2">{{ qr_info.selected_size.box_size
+                                                }}px</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Цвет QR-кода:</th>
+                                        <td>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div style="width: 20px; height: 20px; background-color: {{ qr_info.color }}; border-radius: 4px; border: 1px solid var(--border-color);"
+                                                    aria-hidden="true"></div>
+                                                <code>{{ qr_info.color }}</code>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Коррекция ошибок:</th>
+                                        <td>{{ qr_info.error_level }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Размер изображения:</th>
+                                        <td>
+                                            <span class="badge bg-secondary">{{ qr_info.size_px[0] }}×{{
+                                                qr_info.size_px[1] }}px</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Длина данных:</th>
+                                        <td>
+                                            {{ qr_info.data_length }} символов
+                                            {% if qr_info.max_chars %}
+                                            <br><small class="text-muted">Максимум для этого размера: {{
+                                                qr_info.max_chars }}</small>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Версия QR-кода:</th>
+                                        <td>{{ qr_info.version }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-{% endif %}
+        {% endif %}
 
-<!-- ... остальной код остается без изменений ... -->
+        <!-- ... остальной код остается без изменений ... -->
 
         <!-- SEO-оптимизированная информация -->
         <div class="card shadow-lg mt-5">
@@ -346,17 +373,24 @@
                     <div class="col-md-6 mb-4 mb-md-0">
                         <h3 class="h5 fw-bold mb-3">Что такое QR-код?</h3>
                         <p class="seo-paragraph">
-                            QR-код (Quick Response code) — это двумерный штрих-код, который можно сканировать с помощью камеры смартфона.
-                            Он может содержать различную информацию: ссылки на сайты, текстовые сообщения, контактные данные,
+                            QR-код (Quick Response code) — это двумерный штрих-код, который можно сканировать с помощью
+                            камеры смартфона.
+                            Он может содержать различную информацию: ссылки на сайты, текстовые сообщения, контактные
+                            данные,
                             координаты местоположения и многое другое.
                         </p>
                         <h3 class="h5 fw-bold mb-3">Ограничения QR-кодов:</h3>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Максимальный объем данных зависит от размера и уровня коррекции</li>
-                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Меньший размер = меньше символов</li>
-                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Высокий уровень коррекции = меньше данных, но лучше читаемость</li>
-                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Для длинных текстов используйте большие размеры</li>
-                            <li><i class="bi bi-info-circle text-primary me-2"></i> Рекомендуется не превышать 80% от максимальной емкости</li>
+                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Максимальный объем
+                                данных зависит от размера и уровня коррекции</li>
+                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Меньший размер = меньше
+                                символов</li>
+                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Высокий уровень
+                                коррекции = меньше данных, но лучше читаемость</li>
+                            <li class="mb-2"><i class="bi bi-info-circle text-primary me-2"></i> Для длинных текстов
+                                используйте большие размеры</li>
+                            <li><i class="bi bi-info-circle text-primary me-2"></i> Рекомендуется не превышать 80% от
+                                максимальной емкости</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -364,32 +398,32 @@
                         <div class="table-responsive">
                             <table class="table table-dark table-sm">
                                 <thead class="table-secondary">
-                                <tr>
-                                    <th>Область применения</th>
-                                    <th>Пример</th>
-                                </tr>
+                                    <tr>
+                                        <th>Область применения</th>
+                                        <th>Пример</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Маркетинг</td>
-                                    <td>Рекламные материалы, визитки</td>
-                                </tr>
-                                <tr>
-                                    <td>Образование</td>
-                                    <td>Ссылки на учебные материалы</td>
-                                </tr>
-                                <tr>
-                                    <td>Бизнес</td>
-                                    <td>Оплата товаров, меню ресторанов</td>
-                                </tr>
-                                <tr>
-                                    <td>Личное использование</td>
-                                    <td>Контакты, Wi-Fi пароли</td>
-                                </tr>
-                                <tr>
-                                    <td>События</td>
-                                    <td>Билеты, приглашения</td>
-                                </tr>
+                                    <tr>
+                                        <td>Маркетинг</td>
+                                        <td>Рекламные материалы, визитки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Образование</td>
+                                        <td>Ссылки на учебные материалы</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Бизнес</td>
+                                        <td>Оплата товаров, меню ресторанов</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Личное использование</td>
+                                        <td>Контакты, Wi-Fi пароли</td>
+                                    </tr>
+                                    <tr>
+                                        <td>События</td>
+                                        <td>Билеты, приглашения</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -404,7 +438,8 @@
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item border-0 bg-transparent">
                             <h4 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <button class="accordion-button bg-transparent text-white collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq1">
                                     Сколько символов можно поместить в QR-код?
                                 </button>
                             </h4>
@@ -417,13 +452,15 @@
                                         <li>Большой (15px): ~200-500 символов</li>
                                         <li>Очень большой (20px): ~280-700 символов</li>
                                     </ul>
-                                    Чем выше уровень коррекции (H), тем меньше данных можно поместить, но код будет более устойчив к повреждениям.
+                                    Чем выше уровень коррекции (H), тем меньше данных можно поместить, но код будет
+                                    более устойчив к повреждениям.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item border-0 bg-transparent">
                             <h4 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <button class="accordion-button bg-transparent text-white collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
                                     Что делать если текст не помещается?
                                 </button>
                             </h4>
@@ -442,7 +479,8 @@
                         </div>
                         <div class="accordion-item border-0 bg-transparent">
                             <h4 class="accordion-header">
-                                <button class="accordion-button bg-transparent text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <button class="accordion-button bg-transparent text-white collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
                                     Какой уровень коррекции ошибок выбрать?
                                 </button>
                             </h4>
@@ -451,8 +489,10 @@
                                     <ul>
                                         <li><strong>L (7%)</strong>: Для коротких текстов в хороших условиях</li>
                                         <li><strong>M (15%)</strong>: Оптимальный выбор для большинства случаев</li>
-                                        <li><strong>Q (25%)</strong>: Для печати или когда код может быть частично поврежден</li>
-                                        <li><strong>H (30%)</strong>: Для важных данных или код будет использоваться в сложных условиях</li>
+                                        <li><strong>Q (25%)</strong>: Для печати или когда код может быть частично
+                                            поврежден</li>
+                                        <li><strong>H (30%)</strong>: Для важных данных или код будет использоваться в
+                                            сложных условиях</li>
                                     </ul>
                                     Уровень M рекомендуется по умолчанию.
                                 </div>
@@ -463,29 +503,44 @@
             </div>
         </div>
 
-        <!-- Футер -->
-        <footer class="text-center mt-5 pt-4 border-top border-secondary">
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0 text-md-start">
-                    <h5 class="fw-bold mb-2">QR Генератор</h5>
-                    <p class="text-muted small">
-                        Бесплатный онлайн инструмент для создания QR-кодов с отображением ограничений по символам.
-                        Просто введите текст, выберите настройки и скачайте результат.
-                    </p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="text-muted">
-                        <small>
-                            <i class="bi bi-code-slash me-1"></i>
-                            Создано с помощью Flask и Bootstrap 5
-                            •
-                            <i class="bi bi-github me-1"></i>
-                            <a href="#" class="text-decoration-none" style="color: var(--primary-color);" aria-label="GitHub репозиторий">GitHub</a>
-                        </small>
-                    </p>
-                </div>
-            </div>
-        </footer>
+        <footer class="text-center pt-4 pb-3 border-top border-secondary">
+    <!-- Ссылки на политики -->
+    <div class="mb-3">
+        <small>
+            <a href="/privacy-policy" class="text-decoration-none me-3">Политика конфиденциальности</a> 
+            <a href="/terms-of-service" class="text-decoration-none me-3">Условия использования</a> 
+            <a href="/cookie-policy" class="text-decoration-none me-3">Cookie</a> 
+            <a href="/dmca-policy" class="text-decoration-none me-3">DMCA</a>
+            <a href="/.well-known/security.txt" class="text-decoration-none">Безопасность</a>
+        </small>
+    </div>
+    
+    <!-- Информационный блок -->
+    <div class="row">
+        <div class="col-md-6 mb-3 mb-md-0 text-md-start">
+            <h5 class="fw-bold mb-2">QR Генератор</h5>
+            <p class="text-muted small">
+                Бесплатный онлайн инструмент для создания QR-кодов с отображением ограничений по символам.
+                Просто введите текст, выберите настройки и скачайте результат.
+            </p>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <p class="text-muted">
+                <small>
+                    <i class="bi bi-code-slash me-1"></i>
+                    Создано с помощью Flask и Bootstrap 5
+
+            </p>
+        </div>
+    </div>
+    
+    <!-- Копирайт -->
+    <div class="mt-3 pt-2 border-top">
+        <p class="text-muted small mb-0">
+            © 2026 QR Генератор. Все права защищены.
+        </p>
+    </div>
+</footer>
     </div>
 
     <!-- Подключение Bootstrap JS -->
@@ -493,4 +548,5 @@
     <!-- Подключение внешнего JS файла -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>

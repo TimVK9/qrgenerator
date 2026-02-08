@@ -198,18 +198,6 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
     padding: 0 0.5rem;
 }
 
-.main-title::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-    border-radius: 1px;
-    opacity: 0.8;
-}
 
 /* Подзаголовок */
 .subtitle {
@@ -305,7 +293,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 
 /* Кнопка-призыв к действию */
 .cta-button {
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1.25rem;
@@ -322,7 +310,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
         inset 0 1px 1px rgba(255, 255, 255, 0.2);
     margin-top: 0.5rem;
     position: relative;
-    overflow: hidden;
+   overflow: hidden;
 }
 
 .cta-button::before {
@@ -875,6 +863,9 @@ footer a:hover {
 /* Мобильные устройства (до 768px) */
 @media (max-width: 767px) {
     /* Карточки по 2 в ряд */
+    .cta-button {
+    display: inline-flex;
+    }
     .row {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

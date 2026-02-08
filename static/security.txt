@@ -1,0 +1,48 @@
+# QR Generator Security Policy
+# Service: Free Online QR Code Generator
+# Website: https://qrgenerator-9iyo.onrender.com
+# Standard: RFC 9116
+
+# Primary security contact
+Contact: mailto:info_cdo@mail.ru
+Contact: mailto:security@qrgenerator-9iyo.onrender.com
+
+# Alternative contact methods
+Contact: https://github.com/TimVK9/qrgenerator/security/advisories
+Contact: https://qrgenerator-9iyo.onrender.com/contact
+
+# Expiration date (valid for 1 year)
+Expires: 2027-02-09T23:59:59Z
+
+# Preferred languages for security reports
+Preferred-Languages: ru, en
+
+# Encryption key for secure communication
+# Encryption: https://qrgenerator-9iyo.onrender.com/.well-known/pgp-key.txt
+
+# Security acknowledgment page
+Acknowledgments: https://qrgenerator-9iyo.onrender.com/security/acknowledgments
+
+# Canonical location of this file
+Canonical: https://qrgenerator-9iyo.onrender.com/.well-known/security.txt
+
+# Security policy document
+Policy: https://qrgenerator-9iyo.onrender.com/security/policy
+
+# Vulnerability disclosure policy
+Disclosure: https://qrgenerator-9iyo.onrender.com/security/disclosure
+
+# Hiring information (if applicable)
+# Hiring: https://qrgenerator-9iyo.onrender.com/careers
+
+# Last update timestamp
+Updated: 2026-02-09T12:00:00Z
+
+# Version of this policy
+Version: 2.0
+
+# Scope
+Scope: *.qrgenerator-9iyo.onrender.com
+
+# PGP Fingerprint (if available)
+# OpenPGP-Fingerprint: 0000 1111 2222 3333 4444 5555 6666 7777 8888 9999
