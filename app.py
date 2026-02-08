@@ -554,6 +554,19 @@ def humans_txt():
         'Content-Type': 'text/plain; charset=utf-8'
     }
 
+@app.route('/yandex_9dec845bb9d3d77e.html')
+def yandex_verification():
+    """Яндекс.Вебмастер подтверждение прав на сайт"""
+    return '''
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        </head>
+        <body>Verification: 9dec845bb9d3d77e</body>
+    </html>
+    ''', 200
+
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
